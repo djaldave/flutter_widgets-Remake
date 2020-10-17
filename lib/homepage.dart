@@ -1,6 +1,7 @@
 import 'package:Flutter_Widgets/recipemenu.dart';
 import 'package:flutter/material.dart';
 
+import 'accountmenu.dart';
 import 'recipedescription.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,6 +20,8 @@ class HomePage extends StatelessWidget {
             RecipeDescription(),
             Text("Recipes"),
             RecipeMenu(),
+            Text("Account"),
+            AccountMenu(),
           ],
         ),
       ),
