@@ -35,17 +35,26 @@ class HomePage extends StatelessWidget {
             ),
             RecipeDescription(),
             Padding(
-              padding: EdgeInsets.only(left: 15),
-              child: Text(
-                "Recipes",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+              padding: EdgeInsets.only(left: 15, bottom: 5),
+            ),
+            Text(
+              "Recipes",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
               ),
             ),
             RecipeMenu(),
-            Text("Account"),
+            Padding(
+              padding: EdgeInsets.only(left: 15, top: 15),
+            ),
+            Text(
+              "Account",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
             AccountMenu(),
           ],
         ),
