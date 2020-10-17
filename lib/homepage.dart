@@ -16,7 +16,15 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Recipe of the day"),
+            Container(
+              child: Text(
+                "Recipe of the day",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              color: Color.fromRGBO(255, 87, 34, 1),
+            ),
             Image.asset('assets/images/friedchicken.jpg'),
             RecipeDescription(),
             Text("Recipes"),
