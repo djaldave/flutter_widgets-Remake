@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'registrationform.dart';
+
 class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,7 @@ class RegistrationPage extends StatelessWidget {
           SingleChildScrollView(
             child: Container(
               child: Center(
-                child: Text(
-                  "Al Dave",
-                  style: TextStyle(color: Colors.white),
-                ),
+                child: RegistrationForm(),
               ),
             ),
           ),
