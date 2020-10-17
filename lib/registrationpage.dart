@@ -8,8 +8,17 @@ class RegistrationPage extends StatelessWidget {
         title: Text("Registration"),
         backgroundColor: Color.fromRGBO(56, 142, 60, 1),
       ),
-      body: Center(
-        child: Text("Hello"),
+      body: Stack(
+        children: [
+          Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage('assets/images/login.jpg'),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
