@@ -13,16 +13,18 @@ class HomePage extends StatelessWidget {
         backgroundColor: Color.fromRGBO(56, 142, 60, 1),
       ),
       body: Container(
+        padding: EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              padding: EdgeInsets.all(10),
               width: double.infinity,
               child: Text(
                 "Recipe of the day",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 22,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
               color: Color.fromRGBO(255, 87, 34, 1),
