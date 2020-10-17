@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'recipedescription.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,6 +15,7 @@ class HomePage extends StatelessWidget {
           children: [
             Text("Recipe of the day"),
             Image.asset('assets/images/friedchicken.jpg'),
+            RecipeDescription(),
           ],
         ),
       ),
