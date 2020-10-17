@@ -9,7 +9,10 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
         child: Column(
-          children: [],
+          children: [
+            Text("Recipe of the day"),
+            Image.asset('assets/images/friedchicken.jpg'),
+          ],
         ),
       ),
     );
