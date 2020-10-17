@@ -17,11 +17,13 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              width: double.infinity,
               child: Text(
                 "Recipe of the day",
                 style: TextStyle(
-                  color: Colors.white,
-                ),
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
               ),
               color: Color.fromRGBO(255, 87, 34, 1),
             ),
