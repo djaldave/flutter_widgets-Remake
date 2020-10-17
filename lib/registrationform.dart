@@ -15,6 +15,7 @@ InputDecoration txtDecoration(hintText) {
 
 class _RegistrationFormState extends State<RegistrationForm> {
   final _formKey = GlobalKey<FormState>();
+  bool _isAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,20 @@ class _RegistrationFormState extends State<RegistrationForm> {
             decoration: txtDecoration('Confirm Password'),
             obscureText: true,
           ),
+          Row(
+            children: [
+              Checkbox(
+                  value: _isAccepted,
+                  onChanged: (isAccepted) {
+                    setState(() {
+                      _isAccepted = isAccepted;
+                    });
+                  }),
+              Text('By clicking Register, '
+                  'you agree to our terms\n and data policy'),
+            ],
+          ),
+          ElevatedButton(onPressed: () {}, child: Text("Register")),
         ],
       ),
     );
