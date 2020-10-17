@@ -22,6 +22,16 @@ class RecipeDescription extends StatelessWidget {
               Text("Main Dish"),
             ],
           ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (int i = 0; i < 5; i++) Icon(Icons.star),
+            ],
+          ),
+          RaisedButton(
+            onPressed: () {},
+            child: Text("View"),
+          ),
         ],
       ),
     );
