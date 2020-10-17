@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 
 class RecipeDescription extends StatelessWidget {
+  RecipeDescription({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Color.fromRGBO(255, 87, 34, 1);
+      }
+      return Color.fromRGBO(76, 175, 80, 1);
+    }
+
     return Center(
       child: Column(
         children: [
@@ -48,9 +61,18 @@ class RecipeDescription extends StatelessWidget {
                 ),
             ],
           ),
-          RaisedButton(
+          // RaisedButton(
+          //   onPressed: () {},
+          //   child: Text("View"),
+          //   color: Color.fromRGBO(76, 175, 80, 1),
+          //   textColor: Colors.white,
+          // ),
+          ElevatedButton(
             onPressed: () {},
             child: Text("View"),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith(getColor),
+            ),
           ),
         ],
       ),
