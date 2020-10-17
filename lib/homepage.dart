@@ -7,8 +7,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Yummy Recipes"),
       ),
-      body: Center(
-        child: Text("Yummy Recipes App"),
+      body: Container(
+        child: Column(
+          children: [],
+        ),
       ),
     );
   }
