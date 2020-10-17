@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    Center(
-      child: Text("Hello world",textDirection: TextDirection.ltr,),
-
-    )
-  );
+  runApp(YummyRecipes());
 }
 
+class YummyRecipes extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp();
+  }
+}
