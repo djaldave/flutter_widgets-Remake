@@ -34,7 +34,16 @@ class HomePage extends StatelessWidget {
               child: Image.asset('assets/images/friedchicken.jpg'),
             ),
             RecipeDescription(),
-            Text("Recipes"),
+            Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: Text(
+                "Recipes",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+            ),
             RecipeMenu(),
             Text("Account"),
             AccountMenu(),
