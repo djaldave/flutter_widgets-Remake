@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'homepage.dart';
+
 void main() {
   runApp(YummyRecipes());
 }
@@ -9,14 +11,7 @@ class YummyRecipes extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Yummy Recipes",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Yummy Recipes"),
-        ),
-        body: Center(
-          child: Text("Yummy Recipes App"),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }
