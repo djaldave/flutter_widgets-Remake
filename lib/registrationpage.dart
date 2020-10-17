@@ -18,6 +18,16 @@ class RegistrationPage extends StatelessWidget {
               ),
             ),
           ),
+          SingleChildScrollView(
+            child: Container(
+              child: Center(
+                child: Text(
+                  "Al Dave",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
