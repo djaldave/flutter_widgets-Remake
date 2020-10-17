@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Recipe of the day"),
             Image.asset('assets/images/friedchicken.jpg'),
