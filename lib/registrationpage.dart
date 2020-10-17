@@ -13,13 +13,13 @@ class RegistrationPage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new AssetImage('assets/images/login.jpg'),
-                fit: BoxFit.fill,
+              // decoration: new BoxDecoration(
+              //   image: new DecorationImage(
+              //     image: new AssetImage('assets/images/login.jpg'),
+              //     fit: BoxFit.fill,
+              //   ),
+              // ),
               ),
-            ),
-          ),
           SingleChildScrollView(
             child: Container(
               child: Center(
