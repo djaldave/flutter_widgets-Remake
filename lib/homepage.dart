@@ -29,7 +29,10 @@ class HomePage extends StatelessWidget {
               ),
               color: Color.fromRGBO(255, 87, 34, 1),
             ),
-            Image.asset('assets/images/friedchicken.jpg'),
+            Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Image.asset('assets/images/friedchicken.jpg'),
+            ),
             RecipeDescription(),
             Text("Recipes"),
             RecipeMenu(),

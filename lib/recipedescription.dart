@@ -6,26 +6,46 @@ class RecipeDescription extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Text("Fried Chicken"),
+          Text(
+            "Fried Chicken",
+            style: TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Text("by Cookmaster"),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Cooking Time: "),
+              Text(
+                "Cooking Time: ",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               Text("20 min"),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Category: "),
+              Text(
+                "Category: ",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               Text("Main Dish"),
             ],
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              for (int i = 0; i < 5; i++) Icon(Icons.star),
+              for (int i = 0; i < 5; i++)
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow[800],
+                ),
             ],
           ),
           RaisedButton(
