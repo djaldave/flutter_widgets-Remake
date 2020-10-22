@@ -30,8 +30,8 @@ class LoginFormState extends State<LoginForm> {
 
   _login() {
     if (_formKey.currentState.validate()) {
-      Scaffold.of(context)
-          .showSnackBar(SnackBar(content: Text('Logging in...')));
+      Navigator.pushNamedAndRemoveUntil(
+          context, '/', (Route<dynamic> route) => false);
     }
   }
 
@@ -66,7 +66,11 @@ class LoginFormState extends State<LoginForm> {
           SizedBox(height: 50),
           Text('Don\'t have an account?',
               style: TextStyle(color: Colors.white)),
-          ElevatedButton(child: Text('Register Now'), onPressed: _login),
+          ElevatedButton(
+              child: Text('Register Now'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/registration');
+              }),
         ]) //Column
 
         ); //Form

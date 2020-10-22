@@ -15,7 +15,12 @@ class AccountMenu extends StatelessWidget {
         Padding(padding: EdgeInsets.only(right: 20)),
         Column(
           children: [
-            IconButton(icon: Icon(Icons.close), onPressed: () {}),
+            IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/login', (Route<dynamic> route) => false);
+                }),
             Text("Logout"),
           ],
         ),
