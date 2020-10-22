@@ -30,7 +30,8 @@ class LoginFormState extends State<LoginForm> {
 
   _login() {
     if (_formKey.currentState.validate()) {
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text('Saving...')));
+      Scaffold.of(context)
+          .showSnackBar(SnackBar(content: Text('Logging in...')));
     }
   }
 
