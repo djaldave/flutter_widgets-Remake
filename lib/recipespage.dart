@@ -10,29 +10,44 @@ class RecipesPage extends StatelessWidget {
             title: Text('Recipes'),
             backgroundColor: Color.fromRGBO(56, 142, 60, 1)),
         body: Consumer<FavoritesModel>(
-          builder: (context, favorite , child){
+          builder: (context, favorite, child) {
             return ListView.builder(
-                itemCount: _recipes.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                      child: ListTile(
-                          trailing: (favorite.favorites.contains(_recipes[index]))?
-                          IconButton(icon:Icon(Icons.favorite,color:Colors.red), onPressed: () {  },):
-                          IconButton(icon:Icon(Icons.favorite), onPressed: () {  },),
-                          leading: Image.asset('assets/images/friedchicken.jpg'),
-                          title: Text('${_recipes[index]}'),
-                          onTap:(){
-                            if(favorite.favorites.contains(_recipes[index]))
-                              favorite.remove(_recipes[index]);
-                            else
-                              favorite.add(_recipes[index]);
-                          },
-                      ),
-                  );
-                },
-             );
+              itemCount: _recipes.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    trailing: (favorite.favorites.contains(_recipes[index]))
+                        ? IconButton(
+                            icon: Icon(Icons.favorite, color: Colors.red),
+                            onPressed: () {
+                              if (favorite.favorites.contains(_recipes[index]))
+                                favorite.remove(_recipes[index]);
+                              else
+                                favorite.add(_recipes[index]);
+                            },
+                          )
+                        : IconButton(
+                            icon: Icon(Icons.favorite),
+                            onPressed: () {
+                              if (favorite.favorites.contains(_recipes[index]))
+                                favorite.remove(_recipes[index]);
+                              else
+                                favorite.add(_recipes[index]);
+                            },
+                          ),
+                    leading: Image.asset('assets/images/friedchicken.jpg'),
+                    title: Text('${_recipes[index]}'),
+                    onTap: () {
+                      if (favorite.favorites.contains(_recipes[index]))
+                        favorite.remove(_recipes[index]);
+                      else
+                        favorite.add(_recipes[index]);
+                    },
+                  ),
+                );
+              },
+            );
           },
-        )
-    );
+        ));
   }
 }
