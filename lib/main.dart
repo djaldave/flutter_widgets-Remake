@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'homepage.dart';
 import 'loginpage.dart';
+import 'models/auth_model.dart';
 import 'recipespage.dart';
 import 'registrationpage.dart';
 import 'models/favoritesmodel.dart';
@@ -16,9 +17,10 @@ class YummyRecipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => FavoritesModel(),
+      create: (context) => AuthModel(),
       child: MaterialApp(title: "Yummy Recipes", initialRoute: '/', routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => LoginPage(),
+        '/homepage': (context) => HomePage(),
         '/recipes': (context) => RecipesPage(),
         '/login': (context) => LoginPage(),
         '/favorite-page': (context) => FavoritePage(),

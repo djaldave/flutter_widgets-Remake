@@ -1,5 +1,8 @@
+import 'package:Flutter_Widgets/loginpage.dart';
+import 'package:Flutter_Widgets/models/auth_model.dart';
 import 'package:Flutter_Widgets/recipemenu.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'accountmenu.dart';
 import 'recipedescription.dart';
@@ -7,6 +10,9 @@ import 'recipedescription.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    if (!Provider.of<AuthModel>(context, listen: false).isLoggedIn) {
+      return LoginPage();
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text("Yummy Recipes"),
