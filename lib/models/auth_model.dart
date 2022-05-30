@@ -9,7 +9,7 @@ class AuthModel extends ChangeNotifier {
 
   void login(String token) {
     _isLoggedIn = true;
-    token = _token;
+    _token = token;
     // notifyListeners();
   }
 

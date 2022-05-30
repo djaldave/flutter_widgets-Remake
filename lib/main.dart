@@ -1,13 +1,14 @@
-import 'package:Flutter_Widgets/favorite_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'addrecipe.dart';
+import 'favorite_page.dart';
 import 'homepage.dart';
 import 'loginpage.dart';
 import 'models/auth_model.dart';
+import 'myrecipespage.dart';
 import 'recipespage.dart';
 import 'registrationpage.dart';
-import 'models/favoritesmodel.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(YummyRecipes());
@@ -24,7 +25,9 @@ class YummyRecipes extends StatelessWidget {
         '/recipes': (context) => RecipesPage(),
         '/login': (context) => LoginPage(),
         '/favorite-page': (context) => FavoritePage(),
-        '/registration': (context) => RegistrationPage()
+        '/registration': (context) => RegistrationPage(),
+        '/my-recipe': (context) => MyRecipesPage(),
+        '/add-recipe': (context) => AddRecipe()
       }
           // home: HomePage(),
           ),

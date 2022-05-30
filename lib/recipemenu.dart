@@ -23,7 +23,9 @@ class RecipeMenu extends StatelessWidget {
           children: [
             IconButton(
                 icon: Icon(Icons.create),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/my-recipe');
+                },
                 color: Colors.green),
             Text("My Recipes"),
           ],

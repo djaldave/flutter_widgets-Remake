@@ -32,7 +32,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
 
   _register() {
     if (_formKey.currentState.validate()) {
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text('Saving...')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Saving...')));
     }
   }
 

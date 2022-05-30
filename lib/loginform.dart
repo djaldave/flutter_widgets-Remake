@@ -44,6 +44,9 @@ class LoginFormState extends State<LoginForm> {
       if (loginRes.errMsg == null) {
         // print(loginRes.token);
         Provider.of<AuthModel>(context, listen: false).login(loginRes.token);
+        // var token = Provider.of<AuthModel>(context, listen: false).token;
+        // print("tokeen");
+        // print('${loginRes.token}');
         Navigator.pushNamedAndRemoveUntil(
             context, '/homepage', (Route<dynamic> route) => false);
       } else {
