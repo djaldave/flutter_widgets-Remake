@@ -1,6 +1,8 @@
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'dart:async';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
+
 import '../json_models/categories.dart';
 import 'config.dart';
 

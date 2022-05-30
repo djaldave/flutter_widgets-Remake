@@ -1,8 +1,8 @@
-import 'package:Flutter_Widgets/services/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'models/auth_model.dart';
+import 'services/login_service.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -26,7 +26,7 @@ class LoginFormState extends State<LoginForm> {
       new RegExp(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)");
   final passTxtController = TextEditingController();
   final emailTxtController = TextEditingController();
-
+  //String errMsg = "";
   @override
   void dispose() {
     passTxtController.dispose();
@@ -40,19 +40,16 @@ class LoginFormState extends State<LoginForm> {
       String password = passTxtController.text;
 
       var loginRes = await authenticate(email, password);
-
       if (loginRes.errMsg == null) {
-        // print(loginRes.token);
-        Provider.of<AuthModel>(context, listen: false).login(loginRes.token);
-        // var token = Provider.of<AuthModel>(context, listen: false).token;
-        // print("tokeen");
-        // print('${loginRes.token}');
+        print(loginRes.token);
+        Provider.of<AuthModel>(context, listen: false)
+            .login(loginRes.user, loginRes.token);
         Navigator.pushNamedAndRemoveUntil(
             context, '/homepage', (Route<dynamic> route) => false);
       } else {
-        ScaffoldMessenger.of(context).hideCurrentSnackBar();
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("${loginRes.errMsg}")));
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text('${loginRes.errMsg}',
+                style: TextStyle(color: Colors.yellow))));
       }
     }
   }
@@ -65,10 +62,10 @@ class LoginFormState extends State<LoginForm> {
           SizedBox(height: 70),
           TextFormField(
               controller: emailTxtController,
-              decoration: txtDecoration('Username'),
+              decoration: txtDecoration('Email'),
               validator: (value) {
                 if (value.isEmpty) {
-                  return 'Enter your username';
+                  return 'Enter your Email';
                 }
                 return null;
               }),

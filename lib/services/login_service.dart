@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:Flutter_Widgets/services/config.dart';
 import 'package:http/http.dart' as http;
 
 import '../json_models/login_response.dart';
+import 'config.dart';
 
 Future<LoginResponse> authenticate(String email, String password) async {
   Map<String, dynamic> body = {"email": email, 'password': password};

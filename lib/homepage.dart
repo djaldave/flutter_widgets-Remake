@@ -1,11 +1,11 @@
-import 'package:Flutter_Widgets/loginpage.dart';
-import 'package:Flutter_Widgets/models/auth_model.dart';
-import 'package:Flutter_Widgets/recipemenu.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'accountmenu.dart';
+import 'loginpage.dart';
+import 'models/auth_model.dart';
 import 'recipedescription.dart';
+import 'recipemenu.dart';
 
 class HomePage extends StatelessWidget {
   @override

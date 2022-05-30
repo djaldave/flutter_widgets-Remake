@@ -1,6 +1,7 @@
-import 'package:Flutter_Widgets/models/favoritesmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'models/favoritesmodel.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({Key key}) : super(key: key);
