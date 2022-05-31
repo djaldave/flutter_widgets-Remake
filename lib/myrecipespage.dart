@@ -50,10 +50,15 @@ class _MyRecipesPageState extends State<MyRecipesPage> {
         await Navigator.pushNamed(context, '/add-recipe').then((value) {
       _page = 0;
     });
-    _key.currentState.refresh();
+
     // After the Selection Screen returns a result, hide any previous snackbars
     // and show the new result.
     print('$result');
+    if (result == null) {
+      setState(() {
+        _key.currentState.refresh();
+      });
+    }
     if (result != null) {
       ScaffoldMessenger.of(context)
         ..removeCurrentSnackBar()
@@ -80,13 +85,11 @@ class _MyRecipesPageState extends State<MyRecipesPage> {
                       MaterialPageRoute(
                         builder: (context) =>
                             EditRecipe(recipeInfo: recipeInfo),
-                      )).then((value) {
-                    // _page = 0;
-                    // _key.currentState.refresh();
-                  });
-
+                      ));
+                  print(res);
                   if (res != null) {
                     _key.currentState.refresh();
+                    // setState(() {});
                     ScaffoldMessenger.of(context)
                       ..removeCurrentSnackBar()
                       ..showSnackBar(SnackBar(content: Text('$res')));
@@ -94,7 +97,7 @@ class _MyRecipesPageState extends State<MyRecipesPage> {
                 }), //RecipeItem
             pageFetch: pageFetch,
             // pageRefresh: pageRefresh,
-            pullToRefresh: true,
+            pullToRefresh: false,
             initialLoader: Center(child: CircularProgressIndicator()),
             bottomLoader: Center(
               child: Text('Loading data...'),

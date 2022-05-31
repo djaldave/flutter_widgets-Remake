@@ -10,9 +10,9 @@ import 'recipemenu.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    if (!Provider.of<AuthModel>(context, listen: false).isLoggedIn) {
-      return LoginPage();
-    }
+    // if (!Provider.of<AuthModel>(context, listen: false).isAuthenticated) {
+    //   return LoginPage();
+    // }
     return Scaffold(
       appBar: AppBar(
         title: Text("Yummy Recipes"),

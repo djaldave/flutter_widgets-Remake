@@ -17,18 +17,22 @@ void main() {
 class YummyRecipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print(AuthModel().isAuthenticated);
     return ChangeNotifierProvider(
       create: (context) => AuthModel(),
-      child: MaterialApp(title: "Yummy Recipes", initialRoute: '/', routes: {
-        '/': (context) => LoginPage(),
-        '/homepage': (context) => HomePage(),
-        '/recipes': (context) => RecipesPage(),
-        '/login': (context) => LoginPage(),
-        '/favorite-page': (context) => FavoritePage(),
-        '/registration': (context) => RegistrationPage(),
-        '/my-recipe': (context) => MyRecipesPage(),
-        '/add-recipe': (context) => AddRecipe()
-      }
+      child: MaterialApp(
+          title: "Yummy Recipes",
+          initialRoute:
+              AuthModel().isAuthenticated == true ? '/homepage' : "/login",
+          routes: {
+            '/homepage': (context) => HomePage(),
+            '/recipes': (context) => RecipesPage(),
+            '/login': (context) => LoginPage(),
+            '/favorite-page': (context) => FavoritePage(),
+            '/registration': (context) => RegistrationPage(),
+            '/my-recipe': (context) => MyRecipesPage(),
+            '/add-recipe': (context) => AddRecipe()
+          }
           // home: HomePage(),
           ),
     );

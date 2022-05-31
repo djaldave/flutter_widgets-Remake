@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'models/auth_model.dart';
 
@@ -20,7 +21,10 @@ class AccountMenu extends StatelessWidget {
           children: [
             IconButton(
                 icon: Icon(Icons.close),
-                onPressed: () {
+                onPressed: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  prefs.clear();
                   Provider.of<AuthModel>(context, listen: false).logout();
                   Navigator.pushNamedAndRemoveUntil(
                       context, '/login', (Route<dynamic> route) => false);
